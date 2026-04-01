@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int n = 19;
+    int n = 8;
 
     int start = 0;
     int end = n;
