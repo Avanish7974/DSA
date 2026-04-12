@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 int main () {
     vector<int> vec = {1, 2, 3, 4, 5,6,9};
@@ -33,6 +34,23 @@ int main () {
     cout<<"Size of vec2 after push_back: "<<vec2.size()<<endl;
     cout<<"Capacity of vec2 after push_back: "<<vec2.capacity()<<endl;
     // this means vector automatically resizes itself when the capacity is exceeded, which is a key feature of vectors in C++.
+
+    vector<int> sec;
+    sec.push_back(1);
+    sec.push_back(7);
+    sec.push_back(2);
+    sec.push_back(8);
+    sec.push_back(3);
+
+    for(auto i:sec) {
+        cout<<i<<" ";
+    }
+
+    sort(sec.begin(), sec.end());
+    cout<<endl<<"Sorted vector: ";
+    for(auto i:sec) {
+        cout<<i<<" ";
+    }
 
 
 

@@ -7,11 +7,9 @@ int main() {
     for(int i = 0;i<n;i++) {
         int multiply = 1;
         for(int j = 0;j<n;j++) {
-            if(i != j) {
-                multiply *= arr[j];
-            }
+            multiply *= arr[j];
         }
-        cout<<"Product of elements in row "<<i+1<<": "<<multiply<<endl;
+        cout<<"Product of elements in row "<<i+1<<": "<<multiply/arr[i]<<endl;
     }
     
 
