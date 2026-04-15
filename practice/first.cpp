@@ -2,9 +2,11 @@
 using namespace std;
 
 int main() {
-    int n = 8;
-    int arr[n] = {1,3,2,3,4,1,5,2};
+    int n = 9;
+    int arr[n] = {1,3,2,4,5,4,2,6,7};
     int temp = 0;
+    int value = 0;
+
 
     for(int i = 0; i < n; i++) {
 
@@ -17,26 +19,33 @@ int main() {
                 break;
             }
         }
-
         if(visited) continue;
-
         int count = 1;
-
         for(int j = i + 1; j < n; j++) {
             if(arr[i] == arr[j]) {
                 count++;
             }
         }
-        
-
         cout << "Frequency of " << arr[i] << " is: " << count << endl;
-        if(count > temp) {
+        if(count > temp || (count == temp && arr[i] < value)) {
             temp = count;
+   
+
+            value = arr[i];
+
         }
-        
+
+
+    
+
+
 
     }
-    cout << "Maximum frequency is: " << temp << endl;
+
+    cout << "Element with maximum frequency is: " << value<<" with frequency " << temp << endl;
+    
+
+
 
     return 0;
 }
