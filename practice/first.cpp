@@ -4,6 +4,7 @@ using namespace std;
 int main() {
     int n = 8;
     int arr[n] = {1,3,2,3,4,1,5,2};
+    int temp = 0;
 
     for(int i = 0; i < n; i++) {
 
@@ -26,9 +27,16 @@ int main() {
                 count++;
             }
         }
+        
 
         cout << "Frequency of " << arr[i] << " is: " << count << endl;
+        if(count > temp) {
+            temp = count;
+        }
+        
+
     }
+    cout << "Maximum frequency is: " << temp << endl;
 
     return 0;
 }
