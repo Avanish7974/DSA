@@ -6,28 +6,26 @@ int main() {
     int arr[r][c]  = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
     cout << "Original 2D Array: " << endl;
     for(int i = 0; i < r; i++) {
-        for(int j = c-1; j >= 0; j--) {
+        for(int j = 0; j < c; j++) {
             cout << arr[i][j] << " ";
         }
         cout << endl;
     }
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            swap(arr[i][j], arr[j][i]);
 
-    for(int i = 0;i< r;i++){
-        int start = 0,  end = c - 1;
-        while(start < end){
-            swap(arr[i][start], arr[i][end]);
-            start++;
-            end--;
         }
+
+        cout << endl;
     }
-    cout << "Reversed 2D Array: " << endl;
+    cout << "Transposed 2D Array: " << endl;
     for(int i = 0; i < r; i++) {
         for(int j = 0; j < c; j++) {
             cout << arr[i][j] << " ";
         }
         cout << endl;
     }
-    
 
     return 0;
-}    
+}
