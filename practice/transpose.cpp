@@ -11,6 +11,12 @@ int main() {
         }
         cout << endl;
     }
+    for(int i = 0;i<r;i++){
+        for(int j = 0;j<c;j++){
+            cout<<arr[j][i]<<" ";
+        }
+        cout<<endl;
+    }
     // for(int i = 0; i < r; i++) {
     //     for(int j = 0+1; j < c; j++) {
     //         swap(arr[i][j], arr[j][i]);
