@@ -19,12 +19,28 @@ int main() {
     //     cout << char(i) << " ";
     // }
 
+    
     string str = "thequickbrownfoxjumpsoverthelazydog";
-    // cout << "Lowercase:\n";
+
     for(char c = 'a'; c <= 'z'; c++) {
-        
+
+        bool found = false;
+
+        for(int i = 0; i < str.length(); i++) {
+
+            if(c == str[i]) {
+                found = true;
+                break;
+            }
+        }
+
+        if(found == false) {
+            cout << "Character missing: " << c << endl;
+            return 0;
+        }
     }
 
+    cout << "All characters are present in the string." << endl;
 
     return 0;
 }
