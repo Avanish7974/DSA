@@ -20,6 +20,7 @@ int main() {
     // }
 
     
+    
     string str = "thequickbrownfoxjumpsoverthelazydog";
 
     for(char c = 'a'; c <= 'z'; c++) {
@@ -40,7 +41,7 @@ int main() {
         }
     }
 
-    cout << "All characters are present in the string." << endl;
+    cout << "All characters are string." << endl;
 
     return 0;
 }
