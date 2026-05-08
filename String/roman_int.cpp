@@ -78,6 +78,14 @@ int main()
     int num = 1248;
 
     cout << intToRoman(num);
+    int num2 = 3999;
+    int num3 = 0;
+    while(num2>0){
+        num3 +=1;
+        num2 = num2/10;
+
+    }
+    cout<<num3;
 
     return 0;
 }
