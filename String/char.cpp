@@ -43,5 +43,7 @@ int main() {
 
     cout << "All characters are string." << endl;
 
+    cout<<1/10;
+
     return 0;
 }
