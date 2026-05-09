@@ -38,29 +38,51 @@ int main() {
 
     // code for finding the length of the longest word in a string
 
-    string str3 = "Hello Baby kaise ho";
+    // string str3 = "Hello Baby kaise ho";
 
-    int count = 0, maxLen = 0;
+    // int count = 0, maxLen = 0;
 
-    for(int i = 0; i < str3.length(); i++)
-    {
-        if(str3[i] == ' ')
+    // for(int i = 0; i < str3.length(); i++)
+    // {
+    //     if(str3[i] == ' ')
+    //     {
+    //         count = 0;
+    //     }
+    //     else
+    //     {
+    //         count++;
+
+    //         if(count > maxLen)
+    //         {
+    //             maxLen = count;
+    //         }
+    //     }
+    // }
+
+    // cout << "Length of the longest word in the string: " << maxLen;
+
+    string str4 = "Take u forward is Awesome";
+    int vowels = 0, consonants = 0,space = 0;
+    for(int i = 0;i<str4.length();i++){
+        if(str4[i] =='a' || str4[i] == 'e' || str4[i] == 'i' || str4[i] == 'o' || str4[i] == 'u' ||
+           str4[i] == 'A' || str4[i] == 'E' || str4[i] == 'I' || str4[i] == 'O' || str4[i] == 'U')
         {
-            count = 0;
+            vowels++;
+        }
+        else if(str4[i] == ' ')
+        {
+            space++;
         }
         else
         {
-            count++;
-
-            if(count > maxLen)
-            {
-                maxLen = count;
-            }
+            consonants++;
         }
+        
     }
 
-    cout << "Length of the longest word in the string: " << maxLen;
-
+    cout << "Vowels: " << vowels << endl;
+    cout << "Consonants: " << consonants << endl;
+    cout << "Spaces: " << space << endl;
 
 
     return 0;
