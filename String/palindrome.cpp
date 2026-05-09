@@ -36,7 +36,32 @@ int main() {
 
     // cout << "Number of words in the string: " << count;
 
-    
+    // code for finding the length of the longest word in a string
+
+    string str3 = "Hello Baby kaise ho";
+
+    int count = 0, maxLen = 0;
+
+    for(int i = 0; i < str3.length(); i++)
+    {
+        if(str3[i] == ' ')
+        {
+            count = 0;
+        }
+        else
+        {
+            count++;
+
+            if(count > maxLen)
+            {
+                maxLen = count;
+            }
+        }
+    }
+
+    cout << "Length of the longest word in the string: " << maxLen;
+
+
 
     return 0;
 }
