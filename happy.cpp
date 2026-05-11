@@ -1,20 +1,33 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
+#include <algorithm>
+#include <vector>
 using namespace std;
 int main() {
-    int n = 3,rem= 0,temp = 2;
-    while(temp != 1 && temp != 4) {
-        int sum = 0;
-        while(n>0){
-        rem = n%10;
-        sum += rem*rem;
-        n = n/10;
-    }
-    temp = sum;
-    n = sum;
+    vector<int> arr = {74,38,43,5};
+    int n = arr.size();
+    vector<int> arr2;
+    int temp = 0;
+    // int rem = 0;
+    for(int i = n-1;i>=0;i--){
+        if(arr[i]>9){
+            int rem = 0;
+            while(arr[i]>0){
+                rem = arr[i]%10;
+                arr[i] = arr[i]/10;
+                arr2.push_back(rem);
+
+            }
+        }
+        else{
+            arr2.push_back(arr[i]);
+        }
+
+        
+
 
     }
-    cout<<"The number is: "<<temp<<endl;
+    reverse(arr2.begin(),arr2.end());
 
     return 0;
 }
