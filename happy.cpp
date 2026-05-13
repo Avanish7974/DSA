@@ -3,8 +3,8 @@ using namespace std;
 
 int main() {
 
-    string str = "anagram";
-    string str2 = "nagaram";
+    string str = " ";
+    string str2 = "s";
     int arr[26] = {0};
 
     for(int i = 0; i < str.length(); i++) {
@@ -24,6 +24,18 @@ int main() {
         cout << arr[i] << " ";
     }
     cout << endl;
+    for(int i = 0; i < 26; i++) {
 
+    if(arr[i] != 0) {
+
+        char c = 'a' + i;
+
+        cout << c << " ";
+
+        return 0;
+    }
+}
+
+    // cout << "Anagrams" << endl;
     return 0;
 }
