@@ -1,33 +1,29 @@
-// Online C++ compiler to run C++ program online
 #include <iostream>
-#include <algorithm>
-#include <vector>
 using namespace std;
+
 int main() {
-    vector<int> arr = {74,38,43,5};
-    int n = arr.size();
-    vector<int> arr2;
-    int temp = 0;
-    // int rem = 0;
-    for(int i = n-1;i>=0;i--){
-        if(arr[i]>9){
-            int rem = 0;
-            while(arr[i]>0){
-                rem = arr[i]%10;
-                arr[i] = arr[i]/10;
-                arr2.push_back(rem);
 
-            }
-        }
-        else{
-            arr2.push_back(arr[i]);
-        }
+    string str = "anagram";
+    string str2 = "nagaram";
+    int arr[26] = {0};
 
-        
-
-
+    for(int i = 0; i < str.length(); i++) {
+        arr[str[i] - 'a']++;
     }
-    reverse(arr2.begin(),arr2.end());
+
+    cout << "Array after counting characters in str: ";
+    for(int i = 0; i < 26; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    for(int i = 0; i < str2.length(); i++) {
+        arr[str2[i] - 'a']--;
+    }
+    cout << "Array after counting characters in str2: ";
+    for(int i = 0; i < 26; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
