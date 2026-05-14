@@ -1,23 +1,33 @@
 #include <iostream>
 #include <string>
 
-
 using namespace std;
 
 int main() {
-    
-    string s = "Let's take LeetCode contest";
-    string ans = "";
-    int start = 0;
-    int end = s.length() - 1;
-    // to find the length of first word in the string
 
-    for(int i = 0;i<end;i++){
-        if(i == 4){
-            start = s[i].length();
+    string s = "Let's take LeetCode contest";
+    int length = 0;
+    int temp = 0;
+    int start = 0;
+    int end = 0;
+
+    for(int i = 0; i < s.length(); i++) {
+
+        if(s[i] == ' ') {
+            end = length + temp - 1;
+            while(start < end){
+                swap(s[start], s[end]);
+                start++;
+                end--;
+            }
+            start = i+1;
+            temp = length;
+            length = 0;
         }
+
+        length++;
     }
-    cout<<end;
+    cout << s << endl;
 
     return 0;
 }
