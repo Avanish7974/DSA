@@ -1,13 +1,5 @@
 #include <iostream>
 using namespace std;
-// void pointer(int *c,int*v){
-//     int temp = *c;
-//     *c = *v;
-//     *v = temp;
-//     cout<<c;
-//     cout<<endl;
-//     cout<<v;
-// }
 void value(int a,int b){
     int temp = a;
     a = b;
@@ -46,12 +38,6 @@ int main() {
     cout<<e<<endl; // Output: 10
     e = 30; // Modifying e will modify c
     cout<<c<<endl; // Output: 30
-    
 
-   
-
-
-
-    
     return 0;
 }

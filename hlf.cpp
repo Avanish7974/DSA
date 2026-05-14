@@ -1,31 +1,23 @@
 #include <iostream>
+#include <string>
+
+
 using namespace std;
 
 int main() {
-    int arr[4] = {1,2,3,4};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    int arr2[4] = {0};
+    
+    string s = "Let's take LeetCode contest";
+    string ans = "";
+    int start = 0;
+    int end = s.length() - 1;
+    // to find the length of first word in the string
 
-    for(int i = 0;i<n;i++){
-        int count = 0;
-        for(int j = i+1;j<n;j++){
-            if(arr[i]%2 == 0){
-                if(arr[j]%2 != 0){
-                    count += 1;
-                }
-                arr2[i] = count;
-            }
-            if(arr[i]%2 != 0){
-                if(arr[j]%2 == 0){
-                    count += 1;
-                }
-                arr2[i] = count;
-            }
+    for(int i = 0;i<end;i++){
+        if(i == 4){
+            start = s[i].length();
+        }
     }
-}
-for(int i = 0;i<n;i++){
-    cout<<arr2[i]<<" ";
-}
+    cout<<end;
 
     return 0;
 }
