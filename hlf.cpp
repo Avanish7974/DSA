@@ -5,28 +5,34 @@ using namespace std;
 
 int main() {
 
-    string s = "Let's take LeetCode contest";
-    int length = 0;
-    int temp = 0;
-    int start = 0;
-    int end = 0;
+    string s = "ab-cd-";
 
-    for(int i = 0; i < s.length(); i++) {
+    int len = s.length();
+    int le = len - 1;
 
-        if(s[i] == ' ') {
-            end = length + temp - 1;
-            while(start < end){
-                swap(s[start], s[end]);
-                start++;
-                end--;
+    for(int i = 0; i < le; ) {
+
+        if((s[i] >= 'a' && s[i] <= 'z') ||
+           (s[i] >= 'A' && s[i] <= 'Z')) {
+
+            if((s[le] >= 'a' && s[le] <= 'z') ||
+               (s[le] >= 'A' && s[le] <= 'Z')) {
+
+                swap(s[i], s[le]);
+                i++;
+                le--;
             }
-            start = i+1;
-            temp = length;
-            length = 0;
+
+            else {
+                le--;
+            }
         }
 
-        length++;
+        else {
+            i++;
+        }
     }
+
     cout << s << endl;
 
     return 0;

@@ -1,18 +1,32 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-
+// class Solution {
+// public:
+//     int diagonalSum(vector<vector<int>>& mat) {
+//     int n = mat.size();
+//     int sum = 0;
+//     int first = 0;
+//     int last = n - 1;
+//     while(first < n){
+//         sum +=  mat[first][last];
+//         first++;
+//         last--;
+//     }
+//     int fir = 0;
+//     int las = 0;
+//     while(fir < n){
+//         sum +=  mat[fir][las];
+//         fir++;
+//         las++;
+//     }
+//     return sum;
+        
+//     }
+// };
 int main() {
-    int arr[3][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
-    int target = 10;
-    cout << "2D Array: " << endl;
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 4; j++) {
-            if(arr[i][j] == target){
-                cout<<"Element found at index: [" << i << "][" << j << "]" << endl;
-            }
-        }
-       
-    }
-    
+    vector<vector<int>> mat = {{1,2,3},{4,5,6},{7,8,9}};
+    Solution s;
+    cout << s.diagonalSum(mat) << endl;
     return 0;
 }
