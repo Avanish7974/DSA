@@ -1,22 +1,33 @@
 #include <iostream>
-#include <vector>
 #include <string>
-#include <algorithm>
 using namespace std;
 
 int main() {
-    string s = "poiinter";
+
+    string s = "pointer is very important";
     string s1 = "";
-    cout << s << endl;
+    string word = "";
+
     int n = s.length();
-    for(int i = 0;i<n;i++) {
-        if(s[i] == 'i'){
-            reverse(s1.begin(), s1.end());
+
+    for(int i = 0; i < n; i++) {
+
+        if(s[i] != ' ') {
+            word.push_back(s[i]);
         }
-        else{
-            s1.push_back(s[i]);
+        else {
+
+            s1 += word;
+            s1 += " ";
+
+            word = "";
         }
     }
+
+    // last word
+    s1 += word;
+
     cout << s1 << endl;
+
     return 0;
 }
