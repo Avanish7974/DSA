@@ -1,33 +1,35 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 int main() {
 
-    string s = "pointer is very important";
-    string s1 = "";
-    string word = "";
 
-    int n = s.length();
 
-    for(int i = 0; i < n; i++) {
-
-        if(s[i] != ' ') {
-            word.push_back(s[i]);
+    string s = "ba";
+    int max = 0;
+    int ind = 0;
+        int sz = s.size();
+        for(int i = 0;i<sz;i++){
+            int temp = 0;
+            int first = 0;
+            if(s[i] == s[i+1]){
+                ind = i;
+                while(s[ind] == s[ind+first]){
+                    temp++;
+                    first++;
+                }
+            }
+            if(temp > max){
+                max = temp;
+            }
+            if(max == 0){
+                max = 1;
+                
+            }
         }
-        else {
-
-            s1 += word;
-            s1 += " ";
-
-            word = "";
-        }
-    }
-
-    // last word
-    s1 += word;
-
-    cout << s1 << endl;
+    cout << max << endl;
 
     return 0;
 }
