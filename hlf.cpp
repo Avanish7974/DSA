@@ -1,39 +1,36 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
+int digit()
+
 int main() {
 
-    string s = "ab-cd-";
+    vector<string>str;
+    string c = "";
+    string a = "abc";
+    string b = "def";
+    string digits = "23";
+    
 
-    int len = s.length();
-    int le = len - 1;
-
-    for(int i = 0; i < le; ) {
-
-        if((s[i] >= 'a' && s[i] <= 'z') ||
-           (s[i] >= 'A' && s[i] <= 'Z')) {
-
-            if((s[le] >= 'a' && s[le] <= 'z') ||
-               (s[le] >= 'A' && s[le] <= 'Z')) {
-
-                swap(s[i], s[le]);
-                i++;
-                le--;
-            }
-
-            else {
-                le--;
-            }
-        }
-
-        else {
-            i++;
+    
+    for(int i = 0;i < a.size();i++){
+        string temp = "";
+        for(int j =0;j<b.size();j++){
+            temp +=a[i];
+            temp +=b[j];
+            str.push_back(temp);
+             temp = "";
         }
     }
+   
+    for(int i = 0;i<str.size();i++){
+        cout << str[i] << endl;
+    }
 
-    cout << s << endl;
+
 
     return 0;
 }
