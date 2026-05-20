@@ -4,31 +4,28 @@
 
 using namespace std;
 
-int digit()
 
 int main() {
 
-    vector<string>str;
-    string c = "";
-    string a = "abc";
-    string b = "def";
-    string digits = "23";
-    
+    int arr[] = {37,12,28,9,100,56,80,5,12};
+    int n = sizeof(arr)/sizeof(arr[0]);
 
-    
-    for(int i = 0;i < a.size();i++){
-        string temp = "";
-        for(int j =0;j<b.size();j++){
-            temp +=a[i];
-            temp +=b[j];
-            str.push_back(temp);
-             temp = "";
+    vector<int>ar;
+    for(int i = 0; i < n; i++){
+        int count = 1;
+        for(int j = 0; j < n; j++){
+            if(arr[i]>arr[j]){
+                count++;
+            }
+            
         }
+        ar.push_back(count);
     }
-   
-    for(int i = 0;i<str.size();i++){
-        cout << str[i] << endl;
+
+    for(int i = 0; i < n; i++){
+        cout << ar[i] << " ";
     }
+    
 
 
 
