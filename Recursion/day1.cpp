@@ -1,19 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int even(int n){
-    if(n == 0){
-        return 0;
+void num(int i, int n){
+
+    if(i > n) {   // Base case
+        cout << i << " ";
+        return;
     }
-    // if(n%2 ==0){
-    //     cout << n << " is even" << endl;
-    // }
-    cout<<n << " is even" << endl;
-    even(n-2);
+
+    cout << i << " ";
+
+    num(i + 2, n);   // Recursive call
 }
 
 int main() {
-    int n = 10;
-    even(n);
-    return 0;
+    num(2, 5);
 }
