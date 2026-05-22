@@ -1,18 +1,30 @@
 #include <iostream>
 using namespace std;
 
-void num(int i, int n){
+int factorial(int i, int n){
 
-    if(i > n) {   // Base case
-        cout << i << " ";
-        return;
+    if(n == 1) {   // Base case
+        cout << i << "aaa ";
+        return i;
     }
 
-    cout << i << " ";
+    i *= n;
+    return factorial(i, n-1);  // Recursive call
+}
+int power(int i, int n, int temp){
 
-    num(i + 2, n);   // Recursive call
+    if(n == 1) {   // Base case
+        cout << i << "ddd ";
+        return i;
+    }
+    
+
+    temp *= i;
+    return power(i, n-1, temp);  // Recursive call
 }
 
 int main() {
-    num(2, 5);
+    factorial(1, 5);
+    power(2, 5,1);
+    return 0;
 }
