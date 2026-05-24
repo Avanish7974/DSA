@@ -8,39 +8,25 @@ using namespace std;
 
 int main() {
 
-    int arr[] = {37,12,28,9,100,56,80,5,12};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    vector<int> ar;
-    for(int i = 0; i < n; i++) {
-        int count = 1;
+    
 
-            for(int j = 0; j < n; j++) {
-
-                // count only UNIQUE smaller elements
-                if(arr[i] > arr[j]) {
-
-                    bool alreadyCounted = false;
-
-                    for(int k = 0; k < j; k++) {
-
-                        if(arr[k] == arr[j]) {
-                            alreadyCounted = true;
-                            break;
-                        }
-                    }
-
-                    if(!alreadyCounted) {
-                        count++;
-                    }
-                }
-            }
-
-            ar.push_back(count);
+    
+        // fibonacci series;
+        int n = 10; // Number of Fibonacci numbers to generate
+        int a = 0, b = 1;
+        cout << "Fibonacci Series: ";
+        int c = 0;
+        for (int i = 0; i < n; i++) {
+            cout << a << " ";
+            c = a + b;
+            a = b;
+            b = c;
+            
         }
 
-    for(int i = 0; i < ar.size(); i++) {
-        cout << ar[i] << " ";
-    }
+        
 
     return 0;
 }
+
+    
