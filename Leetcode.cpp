@@ -1,41 +1,27 @@
 #include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
 int main() {
-
-    string str = " ";
-    string str2 = "s";
-    int arr[26] = {0};
-
-    for(int i = 0; i < str.length(); i++) {
-        arr[str[i] - 'a']++;
+    vector<int>nums = {-5,  -3, -4};
+    int n = nums.size();
+    sort(nums.begin(), nums.end());
+    long long max = nums[n-1]; 
+    cout << max+1 << endl;
+    if(max < 0){
+        return 1;
     }
-
-    cout << "Array after counting characters in str: ";
-    for(int i = 0; i < 26; i++) {
-        cout << arr[i] << " ";
+    for(int i = 1; i <= max+1; i++){
+        if(find(nums.begin(), nums.end(), i) == nums.end()){
+           return i;
+        }
     }
-    cout << endl;
-    for(int i = 0; i < str2.length(); i++) {
-        arr[str2[i] - 'a']--;
-    }
-    cout << "Array after counting characters in str2: ";
-    for(int i = 0; i < 26; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-    for(int i = 0; i < 26; i++) {
+    
 
-    if(arr[i] != 0) {
 
-        char c = 'a' + i;
 
-        cout << c << " ";
-
-        return 0;
-    }
-}
-
-    // cout << "Anagrams" << endl;
     return 0;
 }
