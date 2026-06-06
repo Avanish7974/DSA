@@ -17,12 +17,12 @@ int main() {
          right.push_back(sum);
     }
     right.push_back(0);
-    for(int i = 0;i<n;i++){
-        cout << right[i] << " ";
-    }
-    cout << endl;
+    // for(int i = 0;i<n;i++){
+    //     cout << right[i] << " ";
+    // }
+    // cout << endl;
     vector<int>left;
-    // left.push_back(0);
+    // // left.push_back(0);
     for(int i = 0;i<n;i++){
         int sum  = 0;
        for(int j = i-1;j>=0;j--){ 
@@ -30,17 +30,17 @@ int main() {
        }
          left.push_back(sum);
     }
-    for(int i = 0;i<n;i++){
-        cout << left[i] << " ";
-    }
+    // for(int i = 0;i<n;i++){
+    //     cout << left[i] << " ";
+    // }
     vector<int>answer;
     for(int i = 0;i<n;i++){
         answer.push_back(abs(left[i]-right[i]));
     }
-    cout << endl;
-    for(int i = 0;i<n;i++){
-        cout << answer[i] << " ";
-    }
+    // cout << endl;
+    // for(int i = 0;i<n;i++){
+    //     cout << answer[i] << " ";
+    // }
 
 
 
