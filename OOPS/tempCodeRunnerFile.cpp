@@ -1,0 +1,1 @@
+college obj6(obj5); // Copy constructor for college class
