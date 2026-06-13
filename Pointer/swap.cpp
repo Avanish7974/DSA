@@ -39,5 +39,15 @@ int main() {
     e = 30; // Modifying e will modify c
     cout<<c<<endl; // Output: 30
 
+    int f = 10;
+    int *g = &f; // g is a pointer to f
+    cout<<&f<<endl; // Output: Address of f
+    cout<<g<<endl; // Output: Address of f (same as above)
+    cout<<*g<<endl; // Output: 10
+    *g = 40; // Modifying the value at the address pointed to by g will modify f
+    cout<<f<<endl; // Output: 40
+    
+    
+
     return 0;
 }
