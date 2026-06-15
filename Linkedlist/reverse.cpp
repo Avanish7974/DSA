@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Node {
@@ -137,5 +139,31 @@ int main() {
     cout << "Final Head = " << head->data << endl;
     cout << "Final Tail = " << tail->data << endl;
 
+   
+
+vector<int> values;
+
+temp = head;
+
+while(temp != NULL) {
+    cout << temp->data << " ";
+    values.push_back(temp->data);
+    temp = temp->next;
+}
+
+cout << endl;
+reverse(values.begin(), values.end());
+
+for(int x : values) {
+    cout << x << " ";
+}
+
+temp = head;
+int i = 0;
+while(temp != NULL) {
+    temp->data = values[i];
+    temp = temp->next;
+    i++
+}
     return 0;
 }

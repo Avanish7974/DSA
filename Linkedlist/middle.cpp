@@ -13,13 +13,13 @@ public:
 };
 
 int main() {
-    int arr[8] = {10, 20, 30, 40, 50, 60, 70, 80};
+    int arr[9] = {10, 20, 30, 40, 50, 60, 70, 80,90};
 
     Node* head = NULL;
     Node* tail = NULL;
 
     // Create Linked List
-    for(int i = 0; i < 8; i++) {
+    for(int i = 0; i < 9; i++) {
         Node* newNode = new Node(arr[i]);
 
         if(head == NULL) {
@@ -137,5 +137,22 @@ int main() {
     cout << "Final Head = " << head->data << endl;
     cout << "Final Tail = " << tail->data << endl;
 
+
+    Node* temp1 = head;
+    int count = 0;
+    while(temp1 != NULL) {
+        cout << temp1->data << " ";
+        count++;
+        temp1 = temp1->next;
+    }
+    cout<<endl;
+    count = count/2;
+    cout<<count<<endl;
+    temp1 = head;
+    while(count--) {
+        cout << temp1->data << " ";
+        temp1 = temp1->next;
+    }
+    cout<<"middle one is : "<<temp1->data;
     return 0;
 }

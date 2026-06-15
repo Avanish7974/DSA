@@ -7,10 +7,10 @@ using namespace std;
 
 int main() {
     
-    vector<int> nums = {1,0,1,2};
-    sort(nums.begin(), nums.end());
-    int n = nums.size();
+    int count = 6;
+    count = count/2 +1;
+
     
-    cout<<n;
+    cout<<count;
     return 0;
 }
