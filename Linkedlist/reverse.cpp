@@ -154,16 +154,21 @@ while(temp != NULL) {
 cout << endl;
 reverse(values.begin(), values.end());
 
-for(int x : values) {
-    cout << x << " ";
-}
-
 temp = head;
 int i = 0;
 while(temp != NULL) {
     temp->data = values[i];
     temp = temp->next;
-    i++
+    i++;
+}
+
+
+temp = head;
+cout<<endl;
+while(temp != NULL) {
+    cout<<temp->data<<" ";
+    temp = temp->next;
+    i++;
 }
     return 0;
 }
