@@ -2,13 +2,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node {
+class ListNode {
 public:
-    int data;
-    Node* next;
+    int val;
+    ListNode* next;
 
-    Node(int value) {
-        data = value;
+    ListNode(int value) {
+        val = value;
         next = NULL;
     }
 };
@@ -16,12 +16,12 @@ public:
 int main() {
     int arr[8] = {10, 20, 30, 40, 50, 60, 70, 80};
 
-    Node* head = NULL;
-    Node* tail = NULL;
+    ListNode* head = NULL;
+    ListNode* tail = NULL;
 
     // Create Linked List
     for(int i = 0; i < 8; i++) {
-        Node* newNode = new Node(arr[i]);
+        ListNode* newNode = new ListNode(arr[i]);
 
         if(head == NULL) {
             head = newNode;
@@ -35,9 +35,9 @@ int main() {
 
     // Display Original List
     cout << "Original List: ";
-    Node* temp = head;
+    ListNode* temp = head;
     while(temp != NULL) {
-        cout << temp->data << " ";
+        cout << temp->val << " ";
         temp = temp->next;
     }
     cout << endl;
@@ -56,8 +56,8 @@ k = k % length;
 
 for(int i = 0; i < k; i++) {
 
-    Node* first = head;
-    Node* second = NULL;
+    ListNode* first = head;
+    ListNode* second = NULL;
 
     while(first->next != NULL) {
         second = first;
@@ -72,7 +72,7 @@ for(int i = 0; i < k; i++) {
 }
     temp = head;
     while(temp != NULL) {
-        cout << temp->data << " ";
+        cout << temp->val << " ";
         temp = temp->next;
     }
 
