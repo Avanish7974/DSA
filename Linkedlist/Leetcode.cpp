@@ -14,13 +14,13 @@ public:
 };
 
 int main() {
-    int arr[8] = {10, 20, 30, 40, 50, 60, 70, 80};
+    int arr[5] = {1,2,3,4,5};
 
     ListNode* head = NULL;
     ListNode* tail = NULL;
 
     // Create Linked List
-    for(int i = 0; i < 8; i++) {
+    for(int i = 0; i < 5; i++) {
         ListNode* newNode = new ListNode(arr[i]);
 
         if(head == NULL) {
@@ -44,38 +44,35 @@ int main() {
 
     // code for rotate by k places 
 
-    int length = 0;
-     temp = head;
-
-while(temp != NULL) {
-    length++;
-    temp = temp->next;
-}
-int k = 2;
-k = k % length;
-
-for(int i = 0; i < k; i++) {
-
-    ListNode* first = head;
-    ListNode* second = NULL;
-
-    while(first->next != NULL) {
-        second = first;
-        first = first->next;
+   temp = head;
+   int sum = 0;
+   int n = 2;
+   while(temp != NULL) {
+        cout << temp->val << " ";
+        sum += 1;
+        temp = temp->next;
     }
+    sum = sum - n;
+    cout<<"Sum Is : "<<sum<<endl;
 
-    first->next = head;
-    second->next = NULL;
-
-    head = first;
-    tail = second;
-}
+    ListNode* prev = NULL;
     temp = head;
+    while(sum--){
+        prev = temp;
+        temp = temp->next;
+    }
+ 
+    prev->next = temp->next;
+    // delete temp;
+    temp = head;
+
     while(temp != NULL) {
         cout << temp->val << " ";
         temp = temp->next;
     }
 
+
+    
 
 
 
