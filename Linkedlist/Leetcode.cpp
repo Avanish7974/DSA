@@ -14,7 +14,7 @@ public:
 };
 
 int main() {
-    int arr[5] = {1,2,3,4,5};
+    int arr[5] = {5,4,3,8,9};
 
     ListNode* head = NULL;
     ListNode* tail = NULL;
@@ -33,43 +33,41 @@ int main() {
         }
     }
 
+    vector<int>array;
+
     // Display Original List
     cout << "Original List: ";
     ListNode* temp = head;
     while(temp != NULL) {
         cout << temp->val << " ";
+        array.push_back(temp->val);
         temp = temp->next;
     }
     cout << endl;
 
+    sort(array.begin(),array.end());
+
     // code for rotate by k places 
-
-   temp = head;
-   int sum = 0;
-   int n = 2;
-   while(temp != NULL) {
-        cout << temp->val << " ";
-        sum += 1;
-        temp = temp->next;
-    }
-    sum = sum - n;
-    cout<<"Sum Is : "<<sum<<endl;
-
-    ListNode* prev = NULL;
+    int i = 0;
     temp = head;
-    while(sum--){
-        prev = temp;
-        temp = temp->next;
-    }
- 
-    prev->next = temp->next;
-    // delete temp;
-    temp = head;
-
     while(temp != NULL) {
+        temp->val = array[i] ;
         cout << temp->val << " ";
         temp = temp->next;
+        i++;
     }
+    
+
+    // temp = head;
+    // while(temp != NULL) {
+    //     cout << temp->val << " ";
+    //     // array.push_back(temp->val);
+    //     temp = temp->next;
+    // }
+
+
+   
+
 
 
     

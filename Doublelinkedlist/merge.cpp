@@ -62,34 +62,64 @@ int main() {
     vector<int>list;
 
     // Print first list
-    cout << "List 1: ";
+    // cout << "List 1: ";
     ListNode* temp = List1;
 
     while (temp != nullptr) {
-        cout << temp->data << " ";
+        // cout << temp->data << " ";
         list.push_back(temp->data);
         temp = temp->next;
     }
 
-    cout << endl;
+    // cout << endl;
 
     // Print second list
-    cout << "List 2: ";
+    // cout << "List 2: ";
     temp = List2;
 
     while (temp != nullptr) {
-        cout << temp->data << " ";
+        // cout << temp->data << " ";
         list.push_back(temp->data);
         temp = temp->next;
     }
 
-    cout << endl;
+    // cout << endl;
 
    sort(list.begin(), list.end());
 
-   for (auto x : list) {
-    cout << x << " ";
-   }
+//    for (auto x : list) {
+//     cout << x << " ";
+//    }
+
+//    cout<<endl;
+   // Second linked list
+    ListNode* List3 = nullptr;
+    ListNode* tail3 = nullptr;
+
+    for (int i = 0; i < list.size(); i++) {
+
+        if (List3 == nullptr) {
+            List3 = new ListNode(list[i]);
+            tail3 = List3;
+        }
+        else {
+            ListNode* newNode = new ListNode(list[i]);
+
+            tail3->next = newNode;
+            newNode->prev = tail3;
+            tail3 = newNode;
+        }
+    }
+
+    cout << "List 3: ";
+    temp = List3;
+
+    while (temp != nullptr) {
+        cout << temp->data << " ";
+        // list.push_back(temp->data);
+        temp = temp->next;
+    }
+
 
 
     return 0;
