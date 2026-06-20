@@ -36,43 +36,12 @@ int main() {
         }
     }
 
-    // Insert at beginning
-    Node* newHead = new Node(100);
 
-    newHead->next = head;
-    head->prev = newHead;
-    head = newHead;
+    Node* temp = head;
+    head = head->next;
+    delete temp;
 
-    // Insert at end
-    Node* newTail = new Node(99);
 
-    tail->next = newTail;
-    newTail->prev = tail;
-    tail = newTail;
-
-    // Insert 79 at position n
-    int n = 3;
-
-    Node* current = head;
-    Node* previous = nullptr;
-
-    while (n--) {
-        previous = current;
-        current = current->next;
-    }
-
-    Node* middleNode = new Node(79);
-
-    middleNode->next = current;
-    middleNode->prev = previous;
-
-    previous->next = middleNode;
-    current->prev = middleNode;
-
-    // Forward traversal
-    cout << "Forward: ";
-
-    current = head;
 
     while (current != nullptr) {
         cout << current->data << " ";
@@ -92,6 +61,9 @@ int main() {
     }
 
     cout << endl;
+
+    
+    
 
     return 0;
 }
