@@ -14,6 +14,15 @@ public:
     }
 };
 
+bool check(vector<ListNode*>& visited, ListNode* curr)
+{
+    for (int i = 0; i < visited.size(); i++) {
+        if (visited[i] == curr) {
+            return true;
+        }
+    }
+    return false;
+}
 
 int main() {
 
@@ -42,23 +51,25 @@ int main() {
     tail->next = head->next;   // 8 -> 2
 
     // Detect Cycle using Visited Vector
-    ListNode* slow = head;
-    ListNode* fast = head;
+    ListNode* curr = head;
     // vector<ListNode*> visited;
+    unordered_map<ListNode*,bool>visited;
+
     bool cycleFound = false;
 
-    while (fast->next!=NULL && fast!=NULL) {
-        slow = slow->next;
-        fast = fast->next->next;
+    while (curr != NULL) {
 
-        if (slow==fast) {
+        if (visited[curr]==1) {
             cycleFound = true;
+            head = curr;
             break;
         }
+        visited[curr]=1;
+        curr = curr->next;
     }
 
     if (cycleFound)
-        cout << "Cycle Detected" << endl;
+        cout << "Cycle Detected at : "<<head->val << endl;
     else
         cout << "No Cycle" << endl;
 
