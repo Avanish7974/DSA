@@ -9,21 +9,24 @@ public:
 
     ListNode(int value) {
         val = value;
-        next = NULL;
+        next = nullptr;
     }
 };
 
 int main() {
-    int arr[5] = {5,4,3,8,9};
 
-    ListNode* head = NULL;
-    ListNode* tail = NULL;
+    int arr[] = {1,2,3,3,3,4,4,5};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    // Create Linked List
-    for(int i = 0; i < 5; i++) {
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    // Create linked list
+    for (int i = 0; i < n; i++) {
+
         ListNode* newNode = new ListNode(arr[i]);
 
-        if(head == NULL) {
+        if (head == nullptr) {
             head = newNode;
             tail = newNode;
         }
@@ -33,51 +36,27 @@ int main() {
         }
     }
 
-    vector<int>array;
-
-    // Display Original List
-    cout << "Original List: ";
+    // Print linked list
     ListNode* temp = head;
-    while(temp != NULL) {
-        cout << temp->val << " ";
-        array.push_back(temp->val);
-        temp = temp->next;
-    }
-    cout << endl;
-
-    sort(array.begin(),array.end());
-
-    // code for rotate by k places 
-    int i = 0;
-    temp = head;
-    while(temp != NULL) {
-        temp->val = array[i] ;
+    cout<<"List Is : ";
+    while (temp != nullptr) {
         cout << temp->val << " ";
         temp = temp->next;
-        i++;
     }
-    
+    cout<<endl;
+    // Start Question 
 
-    // temp = head;
-    // while(temp != NULL) {
-    //     cout << temp->val << " ";
-    //     // array.push_back(temp->val);
-    //     temp = temp->next;
-    // }
+   vector<int> nums;
 
+for (int i = 0; i < lists.size(); i++) {
 
-   
+    ListNode* temp = lists[i];
 
-
-
-    
-
-
-
-
-
-
-
-
+    while (temp != nullptr) {
+        nums.push_back(temp->val);
+        temp = temp->next;
+    }
+}
+  
     return 0;
 }
