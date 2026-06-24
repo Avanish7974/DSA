@@ -17,7 +17,7 @@ public:
 
 int main() {
 
-    int arr[] = {1,2,3,4,5,6,7,8};
+    int arr[] = {1,8,9};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     ListNode* head = nullptr;
@@ -38,29 +38,93 @@ int main() {
         }
     }
 
-    // Create Cycle
-    tail->next = head->next;   // 8 -> 2
-
-    // Detect Cycle using Visited Vector
-    ListNode* slow = head;
-    ListNode* fast = head;
-    // vector<ListNode*> visited;
-    bool cycleFound = false;
-
-    while (fast->next!=NULL && fast!=NULL) {
-        slow = slow->next;
-        fast = fast->next->next;
-
-        if (slow==fast) {
-            cycleFound = true;
-            break;
-        }
+    
+// preint list 
+    ListNode* temp = head;
+    while(temp!=NULL){
+        cout<<temp->val<<" ";
+        temp = temp->next;
     }
 
-    if (cycleFound)
-        cout << "Cycle Detected" << endl;
-    else
-        cout << "No Cycle" << endl;
+
+    // ListNode* second = head;
+    // ListNode* first = NULL;
+    cout<<endl;
+
+    ListNode* curr = head;
+    ListNode* prev = NULL;
+    ListNode* futu = NULL;
+
+    while (curr)
+    {
+        futu = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = futu;   
+    }
+    head = prev;
+
+
+    temp = head;
+    while(temp!=NULL){
+        cout<<temp->val<<" ";
+        temp = temp->next;
+    }
+
+
+    cout<<endl;
+
+    int carry = 0;
+    temp = head;
+    while(temp){
+        int num = temp->val*2 + carry;
+        int value = num%10;
+        temp->val = value;
+        carry = num/10;
+        temp = temp->next;
+    }
+    if(carry){
+    ListNode* newNode = new ListNode(carry);
+    tail->next = newNode;
+    }
+
+     temp = head;
+    while(temp!=NULL){
+        cout<<temp->val<<" ";
+        temp = temp->next;
+    }
+
+
+    curr = head;
+    prev = NULL;
+    futu = NULL;
+
+    while (curr)
+    {
+        futu = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = futu;   
+    }
+    head = prev;
+cout<<endl;
+     temp = head;
+    while(temp!=NULL){
+        cout<<temp->val<<" ";
+        temp = temp->next;
+    }
+
+
+
+    
+    
+
+
+
+
+    
+
+   
 
     return 0;
 }
