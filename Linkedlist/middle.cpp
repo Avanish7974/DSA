@@ -52,9 +52,7 @@ int main() {
         cout << temp->data << " ";
         temp = temp->next;
     }
-    cout << endl;
-
-    // Delete Tail
+    
     Node* curr = head;
     Node* prev = NULL;
 
@@ -145,7 +143,7 @@ int main() {
         count++;
         temp1 = temp1->next;
     }
-    cout<<endl;
+    
     count = count/2;
     cout<<count<<endl;
     temp1 = head;
